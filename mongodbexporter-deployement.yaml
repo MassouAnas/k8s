@@ -21,4 +21,4 @@ spec:
             - containerPort: 9216
           env:
             - name: MONGODB_URI
-              value: "mongodb://user123:password123@mongodb:27017"
+              value: "mongodb://root:root@mongodb:27017/?authSource=admin"
