@@ -16,10 +16,9 @@ spec:
     spec:
       containers:
         - name: mongodb-exporter
-          image: bitnami/mongodb-exporter:latest
+          image: percona/mongodb_exporter:latest
+          ports:
+            - containerPort: 9216
           env:
             - name: MONGODB_URI
-              value: "mongodb://user123:password123@mongodb:27017/mydatabase"
-          ports:
-            - name: metrics
-              containerPort: 9216
+              value: "mongodb://user123:password123@mongodb:27017"
