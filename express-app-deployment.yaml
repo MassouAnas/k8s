@@ -16,8 +16,8 @@ spec:
     spec:
       containers:
         - name: express-app
-          image: zenoffice-backend:latest
-          imagePullPolicy: Never
+          image: 851725543862.dkr.ecr.eu-west-2.amazonaws.com/zenoffice/back:latest
+          imagePullPolicy: Always
           ports:
             - containerPort: 3000
               protocol: TCP
@@ -48,6 +48,8 @@ spec:
             - mountPath: /app/src/log
               name: express-app-claim0
       restartPolicy: Always
+      imagePullSecrets:
+        - name: ecr-registry-secret
       volumes:
         - name: express-app-claim0
           persistentVolumeClaim:

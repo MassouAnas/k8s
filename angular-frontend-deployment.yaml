@@ -13,10 +13,12 @@ spec:
         app: angular-frontend
     spec:
       containers:
-        - image: zenoffice-front:latest
+        - image: 851725543862.dkr.ecr.eu-west-2.amazonaws.com/zenoffice/front:latest
           name: angular-frontend
           ports:
             - containerPort: 80
               protocol: TCP
-          imagePullPolicy: Never
+          imagePullPolicy: Always
       restartPolicy: Always
+      imagePullSecrets:
+        - name: ecr-registry-secret
