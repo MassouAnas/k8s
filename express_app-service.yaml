@@ -12,6 +12,6 @@ spec:
     - name: "metrics"
       port: 9100
       targetPort: 9100
-      nodePort: 31000 # Specify another nodePort for metrics, if needed
+      nodePort: 31000
   selector:
     app: express-app
